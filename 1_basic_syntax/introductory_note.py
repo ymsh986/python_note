@@ -11,6 +11,6 @@ def string_embedded():
     C = 100
     print(s.format(B, C, A))
 
+
 if __name__ == "__main__":
     string_embedded()
-
