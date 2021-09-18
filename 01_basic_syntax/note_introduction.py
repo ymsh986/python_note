@@ -1,6 +1,8 @@
 # coding: utf-8
 
 def string_embedded():
+    """fstring
+    """
     print("Hi, {}".format("hello world"))
     Name = "Bob"
     text = f"My name is {Name}."
