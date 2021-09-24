@@ -2,6 +2,7 @@
 
 from datetime import datetime
 
+
 class Car:
     """車情報を保持するクラス
     """
