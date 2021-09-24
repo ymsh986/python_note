@@ -1,6 +1,6 @@
 import papermill as pm
 
-new_beta=[1, 2, 3]
+new_beta = [1, 2, 3]
 
 pm.execute_notebook(
    'try_papermill.ipynb',
