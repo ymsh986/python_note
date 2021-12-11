@@ -8,7 +8,7 @@ def note_num_generator():
     """
     n = 0
     while True:
-        num = n*n + 2*n + 3    # 数列式
+        num = n * n + 2 * n + 3    # 数列式
         num = yield num
         n += 1
 
