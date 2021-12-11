@@ -97,7 +97,7 @@ def note_for_zip():
 
     # name1とname2を連結したリストを作る
     for n1, n2 in zip(name1, name2):
-        longname.append(n1+n2)
+        longname.append(n1 + n2)
     print(longname)
 
 
@@ -168,7 +168,7 @@ def note_size(item):
 def note_sort_size():
     """note_size関数を用いてdataをサイズ順に並べる
     """
-    data = ["S", "M", "XS", "L", "M", "M", "XS",  "S", "M", "L", "M"]
+    data = ["S", "M", "XS", "L", "M", "M", "XS", "S", "M", "L", "M"]
     data.sort(key=note_size)
     print(data)
 
@@ -177,7 +177,7 @@ def note_sort_size_lambda():
     """note_sort_sizeと同様処理をlambda式で行う
     """
     sizelist = ["XS", "S", "M", "L"]   # この順に並び替える
-    data = ["S", "M", "XS", "L", "M", "M", "XS",  "S", "M", "L", "M"]
+    data = ["S", "M", "XS", "L", "M", "M", "XS", "S", "M", "L", "M"]
     data.sort(key=lambda item: sizelist.index(item))  # dataをサイズ順に並べる
     print(data)
 
@@ -198,3 +198,41 @@ def note_filter():
     nums = [4, -3, 9, 1, -2, -4, 5]
     nums = list(filter(lambda x: x > 0, nums))
     print(nums)
+
+
+def note_unpack_list():
+    """アンパックの仕組みを利用
+        変数が足りない場合、*付きの変数に割り当てられていない値がまとめられる
+    """
+    list_x = [1, 'a', -1, [3, 4], False]
+    a, b, c, d, e = list_x
+    print(a, b, c, d, e)
+    # -> 1 a -1 [3, 4] False
+
+    f, *g, h = list_x
+    print(f, g, h)
+    # -> 1 ['a', -1, [3, 4]] False
+
+
+def note_type_hints() -> int:
+    """型ヒントを使った書き方
+        型ヒントと異なる型が入ってきたとしても、エラーにはならない。
+        あくまで注釈（ヒント）。
+
+    Returns:
+        int: 税込み計算
+    """
+    from typing import List, Dict
+    x: int = 100
+    y: float = 1.1
+    list_x: List[int] = [1, 2, 3, 4]
+    dict_x: Dict[str, str] = {'name': 'yama'}
+
+    print(list_x)
+    print(dict_x)
+
+    return int(x * y)
+
+
+if __name__ == "__main__":
+    print(note_type_hints())
